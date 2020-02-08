@@ -1,28 +1,35 @@
 import requests
-from bs4 import BeautifulSoup
 
 class wage_scraper:
-    def __init__(self, url):
-        self.raw_data = 0
-        self.clean_data = 0
+    def __init__(self, url, post_data):
+        self.post_data = post_data
+        self.response_data = 0
         self.url = url
 
     def fetch(self):
-        page = requests.get(self.url)
+        page = requests.post(self.url, data = self.post_data)
         if page.status_code == 200:
-            self.raw_data = page.text
+            self.response_data = page.text
         else:
             return False
         return True
 
     def scrape(self):
-        soup = BeautifulSoup(self.raw_data, 'html.parser')
-        self.clean_data = soup.prettify()
-        print(self.clean_data) # right now not correct since no input to website given
+        print(self.response_data)
 
 if __name__ == "__main__":
-    url = 'https://ucannualwage.ucop.edu/wage/'
-    scraper = wage_scraper(url)
+    data = {
+        "rows": "60",
+        "page": "1",
+        "sidx": "EAW_LST_NAM",
+        "year": "2016",
+        "location": "Davis",
+        "firstname": "sean",
+        "lastname": "davis"
+    }
+
+    url = 'https://ucannualwage.ucop.edu/wage/search.action'
+    scraper = wage_scraper(url, data)
     if scraper.fetch():
         scraper.scrape()
     else:
