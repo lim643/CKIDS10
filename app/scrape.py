@@ -1,5 +1,20 @@
 import requests
 
+class format_input:
+    def __init__(self, data):
+        self.data = data
+
+    def clean_input(self):
+        self.data = {
+            "rows": "60",
+            "page": "1",
+            "sidx": "EAW_LST_NAM",
+            "year": data['year'],
+            "location": data['location'],
+            "firstname": data['firstname'],
+            "lastname": data['lastname']
+        }
+
 class wage_scraper:
     def __init__(self, url, post_data):
         self.post_data = post_data
@@ -27,9 +42,11 @@ if __name__ == "__main__":
         "firstname": "sean",
         "lastname": "davis"
     }
+    input = format_input(data)
+    input.clean_input()
 
     url = 'https://ucannualwage.ucop.edu/wage/search.action'
-    scraper = wage_scraper(url, data)
+    scraper = wage_scraper(url, input.data)
     if scraper.fetch():
         scraper.scrape()
     else:
