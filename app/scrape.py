@@ -1,53 +1,25 @@
 import requests
-
-class format_input:
-    def __init__(self, data):
-        self.data = data
-
-    def clean_input(self):
-        self.data = {
-            "rows": "60",
-            "page": "1",
-            "sidx": "EAW_LST_NAM",
-            "year": data['year'],
-            "location": data['location'],
-            "firstname": data['firstname'],
-            "lastname": data['lastname']
-        }
+from utils import utils
 
 class wage_scraper:
-    def __init__(self, url, post_data):
+    def __init__(self, post_data):
+        self.url = 'https://ucannualwage.ucop.edu/wage/search.action'
         self.post_data = post_data
-        self.response_data = 0
-        self.url = url
+        self.response_data = []
+        self.data_list = []
 
     def fetch(self):
-        page = requests.post(self.url, data = self.post_data)
-        if page.status_code == 200:
-            self.response_data = page.text
-        else:
-            return False
-        return True
+        for post_object in self.post_data:
+            page = requests.post(self.url, data = post_object)
+            if page.status_code == 200:
+                self.response_data.append(eval(page.text))
+            else:
+                print("error checking here")
 
     def scrape(self):
-        print(self.response_data)
+        for objects in self.response_data:
+            for cell in objects['rows']:
+                self.data_list.append(cell['cell'][1:])
 
-if __name__ == "__main__":
-    data = {
-        "rows": "60",
-        "page": "1",
-        "sidx": "EAW_LST_NAM",
-        "year": "2016",
-        "location": "Davis",
-        "firstname": "sean",
-        "lastname": "davis"
-    }
-    input = format_input(data)
-    input.clean_input()
-
-    url = 'https://ucannualwage.ucop.edu/wage/search.action'
-    scraper = wage_scraper(url, input.data)
-    if scraper.fetch():
-        scraper.scrape()
-    else:
-        print("Page was not downloaded successfully")
+    def output_data(self):
+        return self.data_list
