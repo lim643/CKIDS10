@@ -1,4 +1,5 @@
 import requests
+import time
 from utils import utils
 
 class wage_scraper:
@@ -15,6 +16,7 @@ class wage_scraper:
                 self.response_data.append(eval(page.text))
             else:
                 print("error checking here")
+            time.sleep(.001)
 
     def scrape(self):
         for objects in self.response_data:
@@ -23,3 +25,7 @@ class wage_scraper:
 
     def output_data(self):
         return self.data_list
+
+class google_scholar_scraper:
+    def __init__(self):
+        self.url = "null"
