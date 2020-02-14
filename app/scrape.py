@@ -1,6 +1,6 @@
 import requests
-import time
 from utils import utils
+import time
 
 class wage_scraper:
     def __init__(self, post_data):
@@ -10,7 +10,6 @@ class wage_scraper:
         self.data_list = []
 
     def fetch(self):
-        times = []
         for post_object in self.post_data:
             page = requests.post(self.url, data = post_object)
             if page.status_code == 200:

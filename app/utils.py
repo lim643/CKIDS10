@@ -2,10 +2,7 @@ import utils
 import csv
 
 class utils:
-    def file_path():
-        return "../data/input.csv"
-
-    def read_csv(input_file):
+    def read_csv(input_file="../data/input.csv"):
         with open(input_file, 'r') as inputFile:
             rows = []
             csv_reader = csv.reader(inputFile)
