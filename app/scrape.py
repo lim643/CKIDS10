@@ -12,17 +12,12 @@ class wage_scraper:
     def fetch(self):
         times = []
         for post_object in self.post_data:
-            t0 = time.time()
             page = requests.post(self.url, data = post_object)
-            t1 = time.time()
-            times.append(t1 - t0)
-            print("query time: ", t1 - t0)
             if page.status_code == 200:
                 self.response_data.append(eval(page.text))
             else:
                 print("error checking here")
             time.sleep(.001)
-        print("average query time: ", sum(times) / len(times))
 
     def scrape(self):
         for objects in self.response_data:
