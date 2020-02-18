@@ -2,9 +2,9 @@
 ## Table of Contents
 1. [Points of Contact](#points-of-contact)
 2. [Getting Started](#getting-starteed)
-3. [Required Software](#required-software)
-4. [Running Locally](#running-locally)
-5. [Model](#model)
+- a. [Required Software](#required-software)
+- b. [Running Locally](#running-locally)
+- c. [Model](#model)
 
 <a name = "points-of-contact)"></a>
 ## Points of Contact
