@@ -10,4 +10,4 @@ for item in data:
 scraper = wage_scraper(queries)
 scraper.fetch()
 scraper.scrape()
-print(scraper.output_data())
+utils.write_csv(scraper.output_data())

@@ -17,5 +17,10 @@ class utils:
                 data.append(row)
         return data
 
-    def write_csv():
-        return 0 
+    def write_csv(dataframe, output_file="../data/output.csv"):
+        with open(output_file, 'w') as outputFile:
+            csv_writer = csv.writer(outputFile, delimiter=',')
+            csv_writer.writerow(['Year', 'Institution', 'First Name', 'Last Name', 'Title', 'Gross Pay', 'Regular Pay', 'Overtime Pay', 'Other'])
+
+            for data in dataframe:
+                csv_writer.writerow(data)
