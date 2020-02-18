@@ -1,8 +1,17 @@
 # Data Scraper UC Wages
 ## Table of Contents
-1. [Getting Started](#getting-starteed)
-2. [Running Locally](#running-locally)
-3. [Model](#model)
+1. [Points of Contact](#points-of-contact)
+2. [Getting Started](#getting-starteed)
+3. [Running Locally](#running-locally)
+4. [Model](#model)
+
+<a name = "points-of-contact)"></a>
+## Points of Contact
+- Matthew Lim (lim643@usc.edu)
+- Minh Nguyen (minhhn@usc.edu)
+- Kevin Tran (ktran774@usc.edu)
+- Sindhu Ravi (sindhu@usc.edu)
+- Vihang Sunil Mangalvedhekar (mangalve@usc.edu)
 
 <a name = "getting-started"></a>
 ## Getting Started
