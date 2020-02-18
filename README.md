@@ -49,7 +49,9 @@ Santa Cruz
 UCOP
 ```
 3. Navigate to the directory app.
+
 4.Run the following command:
+
 ```
 python3 main.py
 ```
