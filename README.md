@@ -2,8 +2,9 @@
 ## Table of Contents
 1. [Points of Contact](#points-of-contact)
 2. [Getting Started](#getting-starteed)
-3. [Running Locally](#running-locally)
-4. [Model](#model)
+3. [Required Software](#required-software)
+4. [Running Locally](#running-locally)
+5. [Model](#model)
 
 <a name = "points-of-contact)"></a>
 ## Points of Contact
@@ -15,6 +16,7 @@
 
 <a name = "getting-started"></a>
 ## Getting Started
+<a name = "required-software"></a>
 ### Required Software
 1. Install required packages.
 ```
