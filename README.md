@@ -54,6 +54,6 @@ python3 main.py
 5 Navigate to the directory data. There should be an output file called output.csv.
 
 <a name = "model"></a>
-## Model
+### Model
 ![](/images/diagram.png)
 
