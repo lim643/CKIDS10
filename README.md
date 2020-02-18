@@ -18,8 +18,8 @@ pip3 install -r requirements.txt
 ```
 pip3 install -r requirements.txt
 ```
-2. Navigate to the directory data
-3. Create proper input file of desired information as follows and name it input.csv
+2. Navigate to the directory data.
+3. Create proper input file of desired information as follows and name it input.csv.
 ```
 First Name, Middle Initial (if provided), Last Name, Institution
 Jane,,Doe,Los Angeles
@@ -41,8 +41,8 @@ Santa Barbara
 Santa Cruz
 UCOP
 ```
-4. Navigate to the directory app
-5. Run the following command
+4. Navigate to the directory app.
+5. Run the following command:
 ```
 python3 main.py
 ```
