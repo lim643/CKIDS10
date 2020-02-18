@@ -32,7 +32,6 @@ First Name, Middle Initial (if provided), Last Name, Institution
 Jane,,Doe,Los Angeles
 John,,Smith,Davis
 
-
 Possible Institutions:
 ASUCLA
 Berkeley
@@ -49,8 +48,7 @@ Santa Cruz
 UCOP
 ```
 3. Navigate to the directory app.
-
-4.Run the following command:
+4. Run the following command:
 
 ```
 python3 main.py
