@@ -13,13 +13,17 @@ class wage_scraper:
         self.data_list = []
 
     def fetch(self):
+        i = 0
+        j = len(self.post_data)
         for post_object in self.post_data:
             page = requests.post(self.url, data = post_object)
             if page.status_code == 200:
                 self.response_data.append(eval(page.text))
+                print("Scraping : ", (i/j)*100, '%')
+                i += 1
             else:
                 print("error checking here")
-            time.sleep(.002)
+            time.sleep(1)
 
     def scrape(self):
         for objects in self.response_data:
@@ -46,7 +50,7 @@ class google_scholar_scraper:
                     index = soup.find_all("td", "gsc_rsb_std")
                     self.data_list.append([post_object.split(',')[0], index[2].string, index[4].string, index[0].string])
                 except:
-                    print("No Google Scholar Record")
+                    print("no google scholar record")
 
     def output_data(self):
         return self.data_list
