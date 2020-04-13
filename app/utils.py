@@ -53,13 +53,14 @@ class utils:
                             wage.append(record['Education'])
                         else:
                             wage.append(' ')
+                    else:
+                        wage.append(' ')
+                        wage.append(' ')
+                        wage.append(' ')
 
                 for record in scholar_data:
                     scholar_name = (record[0]).translate({ord(c): None for c in string.whitespace})
                     if wage_name == scholar_name:
-                        wage.append(' ')
-                        wage.append(' ')
-                        wage.append(' ')
                         for index in record[1:]:
                             wage.append(index)
 
